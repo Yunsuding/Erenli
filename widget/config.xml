@@ -17,15 +17,9 @@
     <preference name="autoLaunch" value="true"/>
     <preference name="fullScreen" value="false"/>
     <preference name="autoUpdate" value="true"/>
-<<<<<<< HEAD
-    <preference name="smartUpdate" value="true"/>
-    <preference name="debug" value="false"/>
-    <preference name="statusBarAppearance" value="false"/>
-=======
     <preference name="smartUpdate" value="false"/>
     <preference name="debug" value="true"/>
     <preference name="statusBarAppearance" value="true"/>
->>>>>>> widget
     <permission name="readPhoneState"/>
     <permission name="camera"/>
     <permission name="record"/>
@@ -43,8 +37,4 @@
         <param name="android_appsecret" value="ZPwDeXmNWn53O9gd9kQKu2" />
         <param name="android_groupid" value="" />
     </feature>
-<<<<<<< HEAD
 </widget>
-=======
-</widget>
->>>>>>> widget
