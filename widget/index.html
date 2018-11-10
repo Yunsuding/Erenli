@@ -64,8 +64,6 @@
 		removeLogic();
         var uzgetuisdk = api.require('pushGeTui');
         uzgetuisdk.initialize(function(ret) {
-            alert(2);
-            alert(ret.type);
             var value = "";
             switch (ret.type) {
                 case 'cid':
