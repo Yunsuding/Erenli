@@ -1,1 +1,29 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0"><title>人力管理系统</title><script type=text/javascript src="https://api.map.baidu.com/api?v=2.0&ak=7b92b3afff29988b6d4dbf9a00698ed8"></script><link href=./static/css/app.28080dc00ea8bc1dde212c1077d55434.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.8fe34aeb36031d7dadfc.js></script><script type=text/javascript src=./static/js/vendor.9bb39c6b07fe3fe8e496.js></script><script type=text/javascript src=./static/js/app.267443d9f731578973b5.js></script></body></html>
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0"><title>人力管理系统</title><script type=text/javascript src="https://api.map.baidu.com/api?v=2.0&ak=7b92b3afff29988b6d4dbf9a00698ed8"></script><link href=./static/css/app.28080dc00ea8bc1dde212c1077d55434.css rel=stylesheet></head><body><div id=app></div><script>alert(11);
+    apiready = function(){
+        alert(1);
+        var uzgetuisdk = api.require('pushGeTui');
+        uzgetuisdk.initialize(function(ret) {
+            alert(2);
+            alert(ret.type);
+            var value = "";
+            switch (ret.type) {
+                case 'cid':
+                    // value = 'cid:' + ret.cid;
+                    window.localStorage.setItem("Cid", ret.cid);
+                    alert(ret.cid);
+                    break;
+                case 'payload':
+                    value = 'payload:' + ret.payload;
+                    break;
+                case 'occurError':
+                    value = 'occurError';
+                    break;
+                case'onNotificationMessageClicked':
+                    value = 'onNotificationMessageClicked' + ret.onNotificationMessageClicked
+                    break;
+                case'onNotificationMessageArrived':
+                    value = 'onNotificationMessageArrived' + ret.onNotificationMessageArrived
+                    break;
+            }
+        });
+    }</script><script type=text/javascript src=./static/js/manifest.8fe34aeb36031d7dadfc.js></script><script type=text/javascript src=./static/js/vendor.9bb39c6b07fe3fe8e496.js></script><script type=text/javascript src=./static/js/app.267443d9f731578973b5.js></script></body></html>
