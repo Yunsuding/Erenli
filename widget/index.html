@@ -34,7 +34,7 @@
         });
         api.openFrame({
             name: 'main',
-            url: 'https://demo.isaveu.cn/resources/#/call',
+            url: '/web/index.html',
             bounces: false,
             rect: {
                 w: 'auto',
@@ -62,28 +62,6 @@
             });
         });
 		removeLogic();
-        var uzgetuisdk = api.require('pushGeTui');
-        uzgetuisdk.initialize(function(ret) {
-            var value = "";
-            switch (ret.type) {
-                case 'cid':
-                    // value = 'cid:' + ret.cid;
-                    window.localStorage.setItem("Cid", ret.cid);
-                    break;
-                case 'payload':
-                    value = 'payload:' + ret.payload;
-                    break;
-                case 'occurError':
-                    value = 'occurError';
-                    break;
-                case'onNotificationMessageClicked':
-                    value = 'onNotificationMessageClicked' + ret.onNotificationMessageClicked
-                    break;
-                case'onNotificationMessageArrived':
-                    value = 'onNotificationMessageArrived' + ret.onNotificationMessageArrived
-                    break;
-            }
-        });
     };
 
 	function onBrowserStateChange(ret){
