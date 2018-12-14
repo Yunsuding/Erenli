@@ -32,18 +32,30 @@
         api.setStatusBarStyle({
             style: 'light'
         });
-        api.openFrame({
-            name: 'main',
-            url: 'https://demo.isaveu.cn/resources/#/call',
-            bounces: false,
-            rect: {
-                w: 'auto',
-                h: 'auto'
-            },
-            progress:{
-                type:'page'
-            }
-        });
+        var intro_ist = $api.getStorage('introt');
+        if (intro_ist) {
+            api.openWin({
+                name: 'index_intro',
+                url: './html/intro_index.html',
+                pageParam: {
+                    name: 'test1'
+                }
+            });
+        }else {
+            api.openFrame({
+                name: 'main',
+                url: 'https://demo.isaveu.cn/resources/#/call',
+                bounces: false,
+                rect: {
+                    w: 'auto',
+                    h: 'auto'
+                },
+                progress:{
+                    type:'page'
+                }
+            });
+        };
+
 		api.setFrameClient({
 		    frameName:'main'
 		},function(ret){
