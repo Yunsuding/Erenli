@@ -33,16 +33,16 @@
         api.setStatusBarStyle({
             style: 'light'
         });
-        var intro_ist = $api.getStorage('introt');
-        if (!intro_ist || intro_ist == 'undefined') {
-            api.openWin({
-                name: 'index_intro',
-                url: './html/intro_index.html',
-                pageParam: {
-                    name: 'test1'
-                }
-            });
-        }else {
+        // var intro_ist = $api.getStorage('introt');
+        // if (!intro_ist || intro_ist == 'undefined') {
+        //     api.openWin({
+        //         name: 'index_intro',
+        //         url: './html/intro_index.html',
+        //         pageParam: {
+        //             name: 'test1'
+        //         }
+        //     });
+        // }else {
             api.openFrame({
                 name: 'main',
                 url: 'https://demo.isaveu.cn/resources/#/call',
@@ -55,13 +55,13 @@
                     type:'page'
                 }
             });
-        };
+        // };
 
-		// api.setFrameClient({
-		//     frameName:'main'
-		// },function(ret){
-		//     onBrowserStateChange(ret);
-		// });
+		api.setFrameClient({
+		    frameName:'main'
+		},function(ret){
+		    onBrowserStateChange(ret);
+		});
 		removeLogic();
         api.addEventListener({
             name: 'keyback'
@@ -77,20 +77,20 @@
 		removeLogic();
     };
 
-	// function onBrowserStateChange(ret){
-    // 	if(0 == ret.state){//开始加载
-	// 		if(!launchRemoved){
-	// 			launchRemoved = true;
-	// 			removeLaunch();
-	// 		}
-    // 	}
-    // 	if(2 == ret.state){
-    // 		if(!loadingRemoved){
-    // 			loadingRemoved = true;
-    // 			document.getElementById('loading').style.display = 'none';
-    // 		}
-    // 	}
-    // }
+	function onBrowserStateChange(ret){
+    	if(0 == ret.state){//开始加载
+			if(!launchRemoved){
+				launchRemoved = true;
+				removeLaunch();
+			}
+    	}
+    	if(2 == ret.state){
+    		if(!loadingRemoved){
+    			loadingRemoved = true;
+    			document.getElementById('loading').style.display = 'none';
+    		}
+    	}
+    }
 	
 	function removeLogic(){
 		setTimeout(function(){
