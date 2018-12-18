@@ -34,7 +34,7 @@
             style: 'light'
         });
         var intro_ist = $api.getStorage('introt');
-        if (intro_ist) {
+        if (!intro_ist || intro_ist == 'undefined') {
             api.openWin({
                 name: 'index_intro',
                 url: './html/intro_index.html',
