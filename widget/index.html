@@ -17,7 +17,6 @@
 	</style>
 </head>
 <body style='background:#EDEDED;'>
-    <div id="header"></div>
     <div id="wrap">
         <div id="main" class='center'>
                 <img id='loading' src='image/load1.gif' style="width: 100%">
@@ -34,9 +33,10 @@
         api.setStatusBarStyle({
             style: 'light'
         });
-        var safeArea = api.safeArea;
-        var header = $api.byId('header');
-        header.style.paddingTop = api.safeArea.top + 'px';
+
+        var safeArea = api.safeArea.top + 'px';
+
+        // header.style.paddingTop = api.safeArea.top + 'px';
         // var intro_ist = $api.getStorage('introt');
         // if (!intro_ist || intro_ist == 'undefined') {
         //     api.openWin({
@@ -66,6 +66,8 @@
             url: 'https://demo.isaveu.cn/resources/#/call',
             bounces: false,
             rect: {
+                x:0,                 //左上角x坐标
+                y:safeArea,
                 w: 'auto',
                 h: 'auto'
             },
