@@ -43,20 +43,32 @@
         //         }
         //     });
         // }else {
-            api.openFrame({
-                name: 'main',
-                url: 'https://demo.isaveu.cn/resources/#/call',
-                bounces: false,
-                rect: {
-                    w: 'auto',
-                    h: 'auto'
-                },
-                progress:{
-                    type:'page'
-                }
-            });
+        //     api.openFrame({
+        //         name: 'main',
+        //         url: 'https://demo.isaveu.cn/resources/#/call',
+        //         bounces: false,
+        //         rect: {
+        //             w: 'auto',
+        //             h: 'auto'
+        //         },
+        //         progress:{
+        //             type:'page'
+        //         }
+        //     });
         // };
 
+        api.openFrame({
+            name: 'main',
+            url: 'https://demo.isaveu.cn/resources/#/call',
+            bounces: false,
+            rect: {
+                w: 'auto',
+                h: 'auto'
+            },
+            progress:{
+                type:'page'
+            }
+        });
 		api.setFrameClient({
 		    frameName:'main'
 		},function(ret){
