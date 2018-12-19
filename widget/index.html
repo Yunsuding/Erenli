@@ -33,6 +33,8 @@
         api.setStatusBarStyle({
             style: 'light'
         });
+        var safeArea = api.safeArea;
+
         // var intro_ist = $api.getStorage('introt');
         // if (!intro_ist || intro_ist == 'undefined') {
         //     api.openWin({
@@ -63,7 +65,7 @@
             bounces: false,
             rect: {
                 w: 'auto',
-                h: 'auto'
+                h: safeArea.top
             },
             progress:{
                 type:'page'
