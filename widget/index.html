@@ -8,17 +8,21 @@
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
 	<style>
 		.center{
-            background-color: #fff;
+            background-color: #f9fdfe;
 			display:-webkit-box;
 			-webkit-box-orient:vertical;
 			-webkit-box-pack:center;
 			-webkit-box-align:center;
 		}
+        #header{
+            background-color: #3295ff;
+        }
 	</style>
 </head>
 <!--#3295ff-->
 <body style='background:#3295ff;'>
     <div id="wrap">
+        <div id="header"></div>
         <div id="main" class='center'>
                 <img id='loading' src='image/load1.gif' style="width: 100%">
         </div>
@@ -36,7 +40,8 @@
         });
 
         var safeArea = api.safeArea.top + 'px';
-
+        var header = $api.byId('header');
+        header.style.height = safeArea;
         // header.style.paddingTop = api.safeArea.top + 'px';
         // var intro_ist = $api.getStorage('introt');
         // if (!intro_ist || intro_ist == 'undefined') {
