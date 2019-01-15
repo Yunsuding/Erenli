@@ -8,17 +8,23 @@
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
 	<style>
 		.center{
+            background-color: #f9fdfe;
 			display:-webkit-box;
 			-webkit-box-orient:vertical;
 			-webkit-box-pack:center;
 			-webkit-box-align:center;
 		}
+        #header{
+            background-color: #3998FC;
+        }
 	</style>
 </head>
-<body style='background:#EDEDED;'>
+<!--#3295ff-->
+<body style='background:#3998FC'>
     <div id="wrap">
+        <div id="header"></div>
         <div id="main" class='center'>
-                <img id='loading' src='image/loading.gif' width=65 height=65>
+                <img id='loading' src='image/load2.gif' style="width: 100%">
         </div>
     </div>
 </body>
@@ -32,11 +38,42 @@
         api.setStatusBarStyle({
             style: 'light'
         });
+
+        var safeArea = api.safeArea.top + 'px';
+        var header = $api.byId('header');
+        header.style.height = safeArea;
+        // header.style.paddingTop = api.safeArea.top + 'px';
+        // var intro_ist = $api.getStorage('introt');
+        // if (!intro_ist || intro_ist == 'undefined') {
+        //     api.openWin({
+        //         name: 'index_intro',
+        //         url: './html/intro_index.html',
+        //         pageParam: {
+        //             name: 'test1'
+        //         }
+        //     });
+        // }else {
+        //     api.openFrame({
+        //         name: 'main',
+        //         url: 'https://demo.isaveu.cn/resources/#/call',
+        //         bounces: false,
+        //         rect: {
+        //             w: 'auto',
+        //             h: 'auto'
+        //         },
+        //         progress:{
+        //             type:'page'
+        //         }
+        //     });
+        // };
+
         api.openFrame({
             name: 'main',
-            url: 'https://demo.isaveu.cn/resources/#/call',
+            url: 'https://www.isaveu.cn/resources/#/call',
             bounces: false,
             rect: {
+                x:0,                 //左上角x坐标
+                y:safeArea,
                 w: 'auto',
                 h: 'auto'
             },

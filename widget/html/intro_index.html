@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <style>
+        #con{
+            margin: 10px;
+            font-size: 24px;
+        }
+        ul{
+            margin-bottom: 10px;
+        }
+        ul li{
+            margin: 5px 10px;
+            padding: 5px;
+            color: #000;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+
+    apiready = function(){
+        $api.setStorage('introt',1);
+        api.openFrameGroup ({
+            name: 's_intro',
+            background: '#fff',
+            scrollEnabled: true,
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            },
+            index: 0,
+            frames: [{
+                name: 'frame1',
+                url: './intro_frm1.html',
+                bounces:false,
+                bgColor: 'widget://image/1.png'
+            }, {
+                name: 'frame2',
+                url: './intro_frm2.html',
+                bounces:false,
+                bgColor: 'widget://image/2.png'
+            },{
+                name: 'frame3',
+                url: './intro_frm3.html',
+                bounces:false,
+                bgColor: 'widget://image/3.png'
+            }]
+        }, function(ret, err){
+            if( ret ){
+                // alert( JSON.stringify( ret ) );
+            }else{
+                // alert( JSON.stringify( err ) );
+            }
+        });
+
+    };
+</script>
+</html>
