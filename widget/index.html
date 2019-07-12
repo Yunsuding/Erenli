@@ -42,11 +42,9 @@
         var safeArea = api.safeArea.top + 'px';
         var header = $api.byId('header');
         header.style.height = safeArea;
-        var aliPushDemo = api.require('aliPushNoUtdId');
+        var aliPushDemo = api.require('aliPush');
         aliPushDemo.isRegister(function (ret, err) {
-            alert(JSON.stringify(ret));
             if (ret.status) {
-                alert(JSON.stringify(ret));
                 getDeviceId();
             }
         });
@@ -88,9 +86,8 @@
     };
 
     function getDeviceId() {
-        var aliPushDemo = api.require('aliPushNoUtdId');
+        var aliPushDemo = api.require('aliPush');
         aliPushDemo.getDeviceId(function (ret) {
-            alert(JSON.stringify(ret));
             if (ret.status) {
                 goIndex(ret.DeviceId);
             } else {
