@@ -28,7 +28,7 @@
     <permission name="internet"/>
     <permission name="bootCompleted"/>
     <permission name="hardware"/>
-    <feature name="aliPush">
+    <feature name="aliPushNoUtdId">
         <param name="AppKey_iOS" value="25521543"/>
         <param name="AppSecret_iOS" value="191687f87716a4192361cb06b391af2a"/>
         <param name="AppKey_Android" value="25247327"/>
