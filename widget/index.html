@@ -44,6 +44,8 @@
         header.style.height = safeArea;
         var aliPushDemo = api.require('aliPushNoUtdId');
         aliPushDemo.isRegister(function (ret, err) {
+
+            alert(JSON.stringify(ret));
             if (ret.status) {
                 alert(JSON.stringify(ret));
                 getDeviceId();
