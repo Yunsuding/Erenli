@@ -42,45 +42,29 @@
         var safeArea = api.safeArea.top + 'px';
         var header = $api.byId('header');
         header.style.height = safeArea;
-        // header.style.paddingTop = api.safeArea.top + 'px';
-        // var intro_ist = $api.getStorage('introt');
-        // if (!intro_ist || intro_ist == 'undefined') {
-        //     api.openWin({
-        //         name: 'index_intro',
-        //         url: './html/intro_index.html',
-        //         pageParam: {
-        //             name: 'test1'
-        //         }
-        //     });
-        // }else {
-        //     api.openFrame({
-        //         name: 'main',
-        //         url: 'https://demo.isaveu.cn/resources/#/call',
-        //         bounces: false,
-        //         rect: {
-        //             w: 'auto',
-        //             h: 'auto'
-        //         },
-        //         progress:{
-        //             type:'page'
-        //         }
-        //     });
-        // };
-
-        api.openFrame({
-            name: 'main',
-            url: 'https://www.isaveu.cn/resources/#/call',
-            bounces: false,
-            rect: {
-                x:0,                 //左上角x坐标
-                y:safeArea,
-                w: 'auto',
-                h: 'auto'
-            },
-            progress:{
-                type:'page'
+        var aliPushDemo = api.require('aliPush');
+        aliPushDemo.isRegister(function (ret, err) {
+            if (ret.status) {
+                getDeviceId();
             }
         });
+        // api.openFrame({
+        //     name: 'main',
+        //     url: 'https://www.isaveu.cn/resources/#/call',
+        //     bounces: false,
+        //     rect: {
+        //         x:0,                 //左上角x坐标
+        //         y:safeArea,
+        //         w: 'auto',
+        //         h: 'auto'
+        //     },
+        //     pageParam: {
+        //         Cid: data
+        //     },
+        //     progress:{
+        //         type:'page'
+        //     }
+        // });
 		api.setFrameClient({
 		    frameName:'main'
 		},function(ret){
@@ -101,6 +85,36 @@
 		removeLogic();
     };
 
+    function getDeviceId() {
+        var aliPushDemo = api.require('aliPush');
+        aliPushDemo.getDeviceId(function (ret) {
+            if (ret.status) {
+                goIndex(ret.DeviceId);
+            } else {
+                getDeviceId();
+            }
+        });
+    }
+
+    function goIndex(cid) {
+        api.openFrame({
+            name: 'main',
+            url: 'https://www.isaveu.cn/resources/#/call',
+            bounces: false,
+            rect: {
+                x:0,                 //左上角x坐标
+                y:safeArea,
+                w: 'auto',
+                h: 'auto'
+            },
+            pageParam: {
+                Cid: cid
+            },
+            progress:{
+                type:'page'
+            }
+        });
+    }
 	function onBrowserStateChange(ret){
     	if(0 == ret.state){//开始加载
 			if(!launchRemoved){
