@@ -6,9 +6,5 @@
         <string>允许位置服务，以便获取附近商家详细信息</string>
         <key>NSLocationUsageDescription</key>
         <string>允许位置服务，以便获取附近商家详细信息</string>
-        <key>NSHealthUpdateUsageDescription</key>
-        <string>允许获取计步信息，以便统计上班时走动步数！</string>
-        <key>NSHealthShareUsageDescription</key>
-        <string>允许获取计步信息，以便统计上班时走动步数！</string>
     </dict>
 </plist>
